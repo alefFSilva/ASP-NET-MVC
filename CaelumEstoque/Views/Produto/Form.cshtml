@@ -1,0 +1,35 @@
+﻿
+    <form action="/Produto/Adiciona" method="post">
+
+        @Html.AntiForgeryToken()
+        @Html.ValidationMessage("produto.precoInformaticaInvalido")
+
+        <label for="nome">Nome</label>
+        <input id="nome" name="produto.nome" value="@ViewBag.produto.Nome" class="form-control" />
+        @Html.ValidationMessage("produto.Nome")
+
+        <label for="preco">Preco</label>
+        <input id="preco" name="produto.preco" value="@ViewBag.produto.Preco" class="form-control"/>
+        @Html.ValidationMessage("produto.Preco")
+
+        <label for="quantidade">Quantidade</label>
+        <input id="quantidade" name="produto.quantidade" value="@ViewBag.produto.Quantidade" class="form-control" />
+
+        <label for="descricao">Descricao</label>
+        <input id="descricao" name="produto.descricao" value="@ViewBag.produto.Descricao" class="form-control"/>
+
+        <label for="categoria">Categoria</label>
+        <select id="categoria" name="produto.categoriaid" class="form-control">
+            @foreach(var categoria in ViewBag.categorias)
+            {
+                <option value="@categoria.Id" selected="@categoria.Id.Equals(ViewBag.produto.CategoriaId)" >
+                    @categoria.Nome
+                </option>
+            }
+        </select>
+        <br/>
+        <input type="submit" value=" Enviar" class="btn btn-info" />
+
+
+
+    </form>

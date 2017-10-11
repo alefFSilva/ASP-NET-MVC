@@ -1,0 +1,32 @@
+﻿
+
+<!DOCTYPE html>
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Content/CSS/bootstrap.css" />
+    <link rel="stylesheet" href="~/Content/CSS/Site.css" />
+
+    <title>Index</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <ul class="nav nav-pills pull-right">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("Produtos", "Index", "Produto")</li>
+                <li>@Html.ActionLink("Categorias", "Index", "Categoria")</li>
+                <li>@Html.ActionLink("Usuários", "Index", "Usuario")</li>
+            </ul>
+            <h3 class="text-muted"> Alura Estoque</h3>
+            <h3>Bem-Vindo @Session["UsuarioNome"]</h3>
+        </div>
+    </div>
+    <div id="conteudo">
+        @RenderBody()
+    </div>
+</body>
+</html>
+
